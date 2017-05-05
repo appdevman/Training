@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Remoting.Messaging;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace ASyncResultsWithCompletedNotification
 {
-    class Program
+    public class FindFiles
     {
-        static void Main(string[] args)
-        {
-        }
-    }
-}
+        
+    } //class
+} //namespace
