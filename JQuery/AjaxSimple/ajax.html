@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>AJAX</title>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        function loadPlanets() {
+            xmlhttp.open("GET", "/data.html", false);
+            xmlhttp.send();
+            var planets = JSON.parse(xmlhttp.responseText);
+            var ulElement = document.getElementById("planetList");
+            for (var planet in planets) {
+                var listItem = ulElement.appendChild(document.createElement("li"));
+                listItem.appendChild(document.createTextNode(planets[planet]));
+            }
+        }
+    </script>
+</head>
+<body onload="loadPlanets()">
+    <ul id="planetList"></ul>
+</body>
+</html>
