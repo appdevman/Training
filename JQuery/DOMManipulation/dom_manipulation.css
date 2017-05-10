@@ -1,0 +1,8 @@
+﻿/* styles the span and p tags */
+p {margin:0px; padding:0px;}
+span
+{
+    display:inline-block;
+    color: white;
+    text-align:center;
+}
