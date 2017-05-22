@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myApp"> <!-- wire up our module-->
+  <head>
+    <title>AngularJS Dependency Injection</title>
+  </head>
+  <body>
+    <div ng-controller="controllerA"> <!-- this is parent module of inheritance-->
+      <h2>Application Message:</h2>
+      {{message}}   <!--inject a dynamic value, in this case its message in this controllerA-->
+    </div><hr>
+    <div ng-controller="controllerB"><!--This is child module of inheritance, the dependancy to myApp-->
+      <h2>Module Message:</h2>
+      {{message}}   <!--inject a dynamic value, in this case its message in this controllerB-->
+    </div>
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="inject_custom.js"></script>
+  </body>
+</html>
