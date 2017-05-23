@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myApp"> <!--module-->
+  <head>
+    <title>AngularJS Scope and Templates</title>
+  </head>
+  <body>
+    <div ng-controller="SimpleTemplate"><!--controller on our module-->
+      ValueA: <input type="number" ng-model="valueA" /><br><!--'valueA' bound to our scope-->
+      ValueB: <input type="number" ng-model="valueB" /><br><br><!--'valueB' bound to our scope-->
+      Expression: {{valueA}} + {{valueB}}<br><br> <!-- two seperate inline expreessions showing both props from our scope-->
+      Live Expression Value: {{valueA + valueB}}<br><br> <!--expression summing both values from our scope-->
+
+        <!--click-event wireup to addValues() method in controller, passing $event-->
+      <input type="button" ng-click="addValues(valueA, valueB, $event)" <!-- $event is contextual javascript object for click event-->
+        value ="Click to Add Values {{valueA}} & {{valueB}}" /><br><!--expression embedded to show button text with dynamic values-->
+      Clicked Expression Value: {{valueC}}<br><!--expression for valueC value-->
+    </div>
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="scope_template.js"></script>
+  </body>
+</html>
