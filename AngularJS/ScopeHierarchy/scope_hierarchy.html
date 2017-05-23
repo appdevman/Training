@@ -1,0 +1,31 @@
+<!-- HIERARCHY example: (3) controllers in same MODULE...how scope.prop can be accessed when they are nested in HTML template-->
+<!-- Lower-levels can access scope from above, but not vice-versa.....virtual inheritance-->
+<!doctype html>
+<html ng-app="myApp"><!--module for the page-->
+<head>
+<title>AngularJS Scope Hierarchy</title>
+</head>
+<body>
+  <div ng-controller="LevelA"><!--highest level controller in this HTML template hierarchy-->
+    <h3>{{title}}</h3><!--expression: value for title prop of LevelA controller scope-->
+    ValueA = {{valueA}} <input type="button" ng-click="inc()" value="+" /><!--LevelA's INC() method-->
+
+    <div ng-controller="LevelB"><hr><!--mid-level controller in this HTML template hierarchy-->
+      <h3>{{title}}</h3><!--expression: value for title prop of LevelB controller scope-->
+      ValueA = {{valueA}}<br><!--has access to levelA scope, because this is nested below it-->
+      ValueB = {{valueB}}<!--from this levelB controller-->
+      <input type="button" ng-click="inc()" value="+" /> <!--LevelB's INC() method-->
+
+      <div ng-controller="LevelC"><hr><!--lowest-level controller in this HTML template hierarchy-->
+       <h3>{{title}}</h3><!--LevelC value expression-->
+        ValueA = {{valueA}}<br><!--has access to levelA scope, because this is nested below it-->
+        ValueB = {{valueB}}<br><!--has access to levelB scope, because this is nested below it-->
+        ValueC = {{valueC}} <!--from this levelC controller-->
+        <input type="button" ng-click="inc()" value="+" /><!--levelC INC() method-->
+      </div>
+    </div>
+  </div>
+  <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+  <script src="scope_hierarchy.js"></script>
+</body>
+</html>
