@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="myApp"><!--module wireup-->
+  <head>
+    <title>AngularJS Basic Scope</title>
+  </head>
+  <body>
+    <div ng-controller="Counter"><!--controller for our module-->
+      <span>Change Amount:</span>
+      <input type="number" ng-model="change"><hr><!--bound to 'change' in our scope-->
+      <span>Starting Value:</span>
+      {{start}}<!--expression for pulling value from 'start' in our scope-->
+      <br>
+      <span>CurrentValue:</span>
+      {{current}}
+      <button ng-click='inc()'>+</button><!--button click wireup to defined 'inc' method-->
+      <button ng-click='dec()'>-</button><hr>
+      <span>Difference:</span>
+      {{difference}}
+    </div>
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="scope_controller.js"></script>
+  </body>
+</html>
