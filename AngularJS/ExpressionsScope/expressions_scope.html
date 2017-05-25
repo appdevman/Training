@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myApp"><!--module-->
+  <head>
+    <title>AngularJS Expressions</title>
+    <style>
+      a{color: blue; text-decoration: underline; cursor: pointer}
+    </style>
+  </head>
+  <body>
+    <div ng-controller="myController"><!--child controller-->
+      Directly accessing variables in the scope:<br>
+      {{speed}} {{vehicle}}<hr><!--values of providers-->
+      Adding variables in the scope:<br>
+      {{speed + ' ' + vehicle}}<hr><!--values of providers concatted by space-->
+      Calling function in the scope:<br>
+      {{lower(speed)}} {{upper('Jeep')}}<hr><!--inline function calls to render upper & lower case strings to browser-->
+      <a ng-click="setValues('Fast', newVehicle)"><!--click-event handler calling method that sets provider values-->
+        Click to change to Fast {{newVehicle}}</a><hr><!--expression to render provider value to browser-->
+      <a ng-click="setValues(newSpeed, 'Rocket')"><!--same as above-->
+        Click to change to {{newSpeed}} Rocket</a><hr><!--same as above-->
+      <a ng-click="vehicle='Car'"><!--click-event hanlder tha t sets provider value-->
+        Click to change the vehicle to a Car</a><hr>
+      <a ng-click="vehicle='Enhanced ' + vehicle"><!--click-event handler that sets vehicle provider to concatted string value-->
+        Click to Enhance Vehicle</a><hr>
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="expressions_scope.js"></script>
+  </body>
+</html>
