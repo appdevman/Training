@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp"><!--module-->
+  <head>
+    <title>AngularJS Sorting and Filtering</title>
+    <style>
+      table{text-align:right;}
+      td,th{padding:3px;}
+      th{cursor:pointer;}
+    </style>
+  </head>
+  <body>
+    <div ng-controller="myController"><!--child controller-->
+      <h2>Sorting and Filtering</h2>
+      <input type="text" ng-model="filterString"><!--textbox bound to provider in scope-->
+      <input type="button" ng-click="setFilter()" value="Filter"><!--button with event-handler to run setFilter function -->
+      <table>
+      <tr>
+        <th ng-click="setSort('make')">Make</th><!--click-event for TH element, setSort on make-->
+        <th ng-click="setSort('model')">Model</th><!--click-event for TH element, setSort on model-->
+        <th ng-click="setSort('capacity')">Capacity</th><!--click-event for TH element, setSort on capacity-->
+      </tr>
+      <tr ng-repeat="plane in filteredPlanes | orderBy:column:reverse"><!--ng-repeat loop through filteredPlanes array, with applied orderBy filter-->
+        <td>{{plane.make}}</td><!--iteration values from scope on each object-->
+        <td>{{plane.model}}</td>
+        <td>{{plane.capacity}}</td>
+      </tr>
+      </table>
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="filter_sort.js"></script>
+  </body>
+</html>
