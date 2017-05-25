@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myApp"><!--module-->
+  <head>
+    <title>AngularJS Expressions</title>
+    <style>
+      p{margin:0px;}
+      p:after{color:red;}
+    </style>
+  </head>
+  <body>
+    <div ng-controller="myController"><!--child controller of module-->
+      <h1>Expressions</h1>
+      Number:<br>
+      {{5}}<hr> <!--number-->
+      String:<br>
+      {{'My String'}}<hr><!--string-->
+      Adding two strings together:<br> 
+      {{'String1' + ' ' + 'String2'}}<hr><!--concat two strings, space in middle-->
+      Adding two numbers together:<br>
+      {{5+5}}<hr><!--add two numbers-->
+      Adding strings and numbers together:<br>
+      {{5 + '+' + 5 + '='}}{{5+5}}<hr><!--strings and numbers-->
+      Comparing two numbers with each other:<br>
+      {{5===5}}<hr><!--comparison of numbers, boolean result-->
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="expressions_basic.js"></script>
+  </body>
+</html>
