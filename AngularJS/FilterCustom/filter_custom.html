@@ -1,0 +1,18 @@
+<!--Here we have to types of invocation for the 'censor' filter...it plays with value providers-->
+<!--1. direct invocation from module level 'censor'-->
+<!--2. controller definition injects the filter as dependency...and it is used in a custom method in the controller scope-->
+<!doctype html>
+<html ng-app="myApp"><!--module-->
+  <head>
+    <title>AngularJS Custom Filter</title>
+  </head>
+  <body>
+    <div ng-controller="myController"><!--child controller-->
+      <h2>Sorting and Filtering</h2>
+      {{phrase | censor:censorText}}<br><!--run module's filter against 'phrase' provider value, using scope value 'censorText' text-->
+      {{"This is some bad, dark, evil text." | censor:"happy"}}<!--run module's filter against static text, using static text 'happy'-->
+      <p ng-click="filterText()">{{txt}}</p><!--invoke controller custom filter method which assigns to scope.txt.....and txt expression here shows it -->
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="filter_custom.js"></script>
+  </body>
+</html>
