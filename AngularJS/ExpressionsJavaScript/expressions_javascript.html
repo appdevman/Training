@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp"><!--module-->
+  <head>
+    <title>AngularJS Expressions</title>
+    <style>
+      a{color: blue; text-decoration: underline; cursor: pointer}
+    </style>
+  </head>
+  <body>
+    <div ng-controller="myController"><!--child controller of module-->
+      <h1>Expressions</h1>
+      Array:<br>
+        {{myArr}}<hr><!--render the contents of myArr provider-->
+      Elements removed from array:<br>
+        {{removedArr}}<hr> <!--render contents of removedArr provider-->
+      <a ng-click="myArr.push(Math.floor(Math.random()*100 + 1))"><!--LINK to push a random number cell into myArr-->
+        Click to append a value to the array</a><hr> 
+      <a ng-click="removedArr.push(myArr.shift())"><!--LINK to remove first cell from myArr, and add it to removedArr-->
+        Click to remove the first value from the array</a><hr>
+      Size of Array:<br>
+        {{myArr.length}}<hr><!--how many cells in myArr-->
+      Cosine of the length of the removed array:<br>
+        {{Math.cos(removedArr.length)}}<hr>  <!--some funky math fun on removedArr-->    
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="expressions_javascript.js"></script>
+  </body>
+</html>
