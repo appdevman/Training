@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="myApp"><!--module-->
+<head>
+  <title>AngularJS Event Directives</title>
+  <style>
+    img {
+      border: 3px ridge black;
+      height: 200px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div ng-controller="myController"><!--child controller-->
+    <h2>Event Directives</h2>
+    <!--many directives for tracking possible mouse events related to this image, passed to event handler(s)-->
+    <!--followed by expressions to show provider info-->
+    <img
+        src="img3.jpg"
+        ng-mouseenter="mouseState='Entered'" 
+        ng-mouseleave="mouseState='Left'" 
+        ng-mouseclick="mouseState='Clicked'" 
+        ng-mousedown="mouseState='Down'" 
+        ng-mouseup="mouseState='Up'" 
+        ng-click="mouseClick($event)" 
+        ng-mousemove="mouseMove($event)"></img><hr>
+    Mouse State: {{mouseState}}<br/><!--mouseState isn't a provider in scope, but is available for expressions herein-->
+    Mouse Position Info: {{mouseInfo|json}}<br/>
+    Last Click Info: {{lastClickInfo|json}}<br/>
+  </div>
+  <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+  <script src="directive_mouse_events.js"></script>
+</body>
+</html>
