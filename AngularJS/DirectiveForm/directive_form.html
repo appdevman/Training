@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp"><!--module-->
+<head>
+  <title>AngularJS Form Directives</title>
+</head>
+<body>
+  <div ng-controller="myController"><!--child controller-->
+    <h2>Forms Directives</h2>
+    <input type="text" ng-model="someText"> {{someText}}<hr><!--bind model provider to scope, and expression of that provider showing realtime changes in text box-->
+      <!--bind model to scope provider 'cbValue', and specify values to set for the binding, of each state-->
+    <!--"if checkbox gets checked, set cbValue to 'checked'"--><!--"if checkbox gets unchecked, set cbValue to 'not checked'"-->
+    <input type="checkbox" ng-model="cbValue" ng-true-value="'Checked'" ng-false-value="'Not Checked'">            
+    Checkbox: {{cbValue}}<hr><!--expression to show cbValue-->
+
+    <input type="radio" ng-model="cameraName" value="Canon"> Canon<br/><!--if selected, bind value to model in scope for this radio (assign Canon to cameraName)-->
+    <input type="radio" ng-model="cameraName" value="Nikon"> Nikon<br/><!--same-->
+    Selected Camera: {{cameraName}} <hr><!--expresson to show provider value, which reflects what is currently selected above-->
+    
+    <!--bind model to scope, iterate through cameras in collection-->
+    <!--for every camera, give me the model...group by make-->
+    <select ng-model="camera" ng-options="c.model group by c.make for c in cameras">
+    </select>
+    {{camera|json}}<!--formatter expression to show selected camera in json format.  It shows the selected camera, due to ng-model='camera' wireup-->
+  <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+  <script src="directive_form.js"></script>
+</body>
+</html>
