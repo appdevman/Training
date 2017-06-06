@@ -1,0 +1,11 @@
+<div>
+  <div  class="imgList" >
+      <!--loop through photos in collection, create hyperlink list items--> 
+      <!--accessing scope.selected AND event handler for link...selecting photo and title from scope-->
+	  <li ng-repeat="photo in photos" 
+	        ng-class="{active:photo.selected}">
+	    <a href="" ng-click="select(photo)">{{photo.title}}</a>
+	  </li>  
+  </div>
+  <div class="imgView" ng-transclude></div><!--provides container for myPhoto child elements-->
+</div>
