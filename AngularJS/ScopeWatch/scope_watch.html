@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myApp"><!--app module-->
+  <head>
+    <title>AngularJS Scope Variable Watch</title>
+    <style>
+      span { cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <h2>Watching Values in the AngularJS Scope</h2>
+    <div ng-controller="myController"><!--module controller-->
+      Select Color: 
+      <span ng-repeat="mColor in mColors"><!--repeat span for colors...datamodel info...click event handler with method to set color-->
+        <span ng-style="{color: mColor}"
+              ng-click="setColor(mColor)">
+          {{mColor}}</span><!--expression to show mColor value-->
+      </span><hr>
+      <span ng-click="hit()">[+]</span><!--event handler for click with hit() method-->
+      Hits: {{hits}}<br><!--expression for hits value-->
+      <span ng-click="miss()">[+]</span><!--event handler for click with miss() method-->
+      Misses: {{misses}}<hr><!--expression for misses value-->
+      Object: {{myObj|json}} <br><!--expression to render object properties....using filter to format in json-->
+      Number of Changes: {{changes}}<!--expression to render changes value-->
+    </div>
+    <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+    <script src="scope_watch.js"></script>
+  </body>
+</html>
