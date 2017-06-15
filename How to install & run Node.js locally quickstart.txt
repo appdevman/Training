@@ -1,0 +1,18 @@
+How to run node.js server for simple duties:
+* download & install node.js from the website first of course
+
+1. open cmd prompt as admin
+2. create a folder for your application, go inside
+3. To initialize node.js for this application type:  npm init
+4. Answer questions (or not) as you wish --> must enter value for entry point
+   which is just service name
+5. To install Express for this app type: npm install express --save
+6. To install Body-Parser for JSON support type: npm install body-parser@1.6.5
+7. To start the server/file type: node <filename.js>
+   It should remain hung and give no errors
+   
+To invoke from web page, here is example localhost:<portNumber>/fileName.html
+Where portNumber --> the port you specified in the server file just started
+fileName.html --> name of html file in same directory as the server file
+** if the server file is up levels from the html resources, you have t0
+put those in URL, can get sticky
