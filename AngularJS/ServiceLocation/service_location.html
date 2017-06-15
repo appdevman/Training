@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp"><!--app module-->
+<head>
+  <title>AngularJS $location Service</title>
+  <style>
+    span { 
+      color: red; text-decoration: underline; 
+      cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div ng-controller="myController">  <!--controller of module-->  
+    <h3>Location Service:</h3>  
+    [<span ng-click="changePath()">Change Path</span>]  <!--click events with methods to call-->
+    [<span ng-click="changeHash()">Change Hash</span>]
+    [<span ng-click="changeSearch()">Change Search</span>]
+    <hr>
+        <!--expressions showing values of scope-->
+    <h4>URL Info</h4>  
+    url: {{url}}<br>
+    absUrl: {{absUrl}}<br>
+    host: {{host}}<br>
+    port: {{port}}<br>
+    protocol: {{protocol}}<br>
+    path: {{path}}<br>
+    search: {{search}}<br>
+    hash: {{hash}}<br>    
+  </div>
+  <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+  <script src="service_location.js"></script>
+</body>
+</html>
