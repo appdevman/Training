@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="myApp"><!--app-->
+<head>
+  <title>AngularJS Custom Censor Service</title>
+  <style>
+    p { color: red; margin-left: 15px; }
+    input { width: 250px; }
+  </style>
+</head>
+<body>
+  <div ng-controller="myController"><!--child controller-->
+    <h3>Custom Censor Service:</h3>
+    Censored Words:<br>
+    <p>{{censoredWords|json}}</p><!--expression to show array values in json format-->
+    <hr>
+    Enter Phrase:<br>
+    <input type="text" ng-model="inPhrase" /><hr><!--tie to model in scope-->
+    Filtered by Factory:
+    <p>{{censoredByFactory}}</p><!--expression showing scope val-->
+    Filtered by Service:
+    <p>{{censoredByService}}</p><!--expression showing scope val-->
+  </div>
+  <script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+  <script src="service_custom_censor.js"></script>
+</body>
+</html>
