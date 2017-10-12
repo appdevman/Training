@@ -1,10 +1,10 @@
 ﻿using ProductsApp.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace ProductsApp.Controllers
 {
@@ -25,7 +25,6 @@ namespace ProductsApp.Controllers
         public IHttpActionResult GetProduct(int id)
         {
             var product = products.FirstOrDefault((p) => p.Id == id);
-            //var producc = products.FirstOrDefault((x) => x.Id == id);
             if (product == null)
             {
                 return NotFound();
@@ -33,6 +32,34 @@ namespace ProductsApp.Controllers
             return Ok(product);
         }
 
+        private readonly HttpClient _httpClient = new HttpClient();
+        public async Task<int> GetDotNetOccurences(bool ok)
+        {
+            // EX invocation (dynamic port): http://localhost:4879/api/Products?ok=true
+            int occurences = 0;
+            if (ok)
+            {
+                var html = await _httpClient.GetStringAsync("http://dotnetfoundation.org");
+                occurences = Regex.Matches(html, ".NET").Count;
+                
+            }
+            return occurences;            
+        }
+
+        public IHttpActionResult DeleteProduct(int id)
+        {
+            //here we would connect to dbase and perform delete.
+            //for brevity, i just coded some skeletal code.
+            var product = products.FirstOrDefault((p) => p.Id == id);
+            if(product == null)
+            {
+                return NotFound();
+            }
+            return Ok();
+        }
+
+        #region temp util methods with no purpose really
+        #endregion
 
     }
 }

@@ -15,6 +15,20 @@
         <input type="button" value="Search" onclick="find();" />
         <p id="product" />
     </div>
+    <hr />
+    <div>
+        <h2>Delete</h2>
+        <input type="text" id="deleteID" size="5" />
+        <input type="button" value="Delete" onclick="deleteCRUD();" />
+        <p id="deleteResponse" />
+    </div>
+    <hr />
+    <div>
+        <h2>Occurences of ".Net" at dotnetfoundation.org site</h2>
+        <input type="button" value="Invoke Async Operations Test" id="btnFoundation" onclick="invokeAsyncScrape();" />
+        <p id="foundationResults" />
+    </div>
+
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
     <script>
@@ -31,6 +45,27 @@
             });
           });
     });
+
+    function deleteCRUD() {
+        var deleteID = $('#deleteID').val();
+        $.getJSON(uri + '/' + deleteID)
+            .done(function (data, Response) {
+                $('#deleteResponse').text(Response);
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                $('#deleteResponse').text('Error: ' + err);
+            });
+    }
+
+    function invokeAsyncScrape() {
+        $.getJSON(uri + "?ok=true")
+            .done(function (data) {
+                $('#foundationResults').text(data);
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                $('#foundationResults').text("Error: " + err);                
+            });
+    }
 
     function formatItem(item) {
       return item.Name + ': $' + item.Price;

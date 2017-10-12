@@ -32,7 +32,6 @@ namespace ReverseCharOrderInString
             }
             Console.WriteLine(sb.ToString());
         }
-
         private static void WordSequenceNotReversedUsingStack(string InputString)
         {
             char[] delimiter = { ' ' };
