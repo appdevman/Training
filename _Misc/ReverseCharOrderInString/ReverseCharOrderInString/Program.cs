@@ -13,8 +13,9 @@ namespace ReverseCharOrderInString
             //FullReverseUsingStack("xof kciuq");
             //WordSequenceNotReversedUsingStack("kciuq xof depmuj raf yawa");
             //LINQLoopingUsingImplicitType();
-            ReverseToArrayOfLetters("kciuq xof depmuj raf yawa");  //BEST WAY FOR THIS STRING TYPE
-            ReverseToArrayEntireString("yawa raf depmuj xof kciuq");//BEST WAY FOR THIS STRING TYPE
+            //ReverseToArrayOfLetters("kciuq xof depmuj raf yawa");  //BEST WAY FOR THIS STRING TYPE
+            //ReverseToArrayEntireString("yawa raf depmuj xof kciuq");//BEST WAY FOR THIS STRING TYPE
+            LinkedListFun();
         }
         private static void FullReverseUsingStack(string input)
         {
@@ -90,6 +91,10 @@ namespace ReverseCharOrderInString
             StringBuilder sb = new StringBuilder();
             sb.Append(input.Reverse().ToArray());
             Console.WriteLine(sb.ToString());
+        }
+        private static void LinkedListFun()
+        {
+
         }
     }
 }

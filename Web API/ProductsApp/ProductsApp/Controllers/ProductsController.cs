@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
@@ -33,7 +34,8 @@ namespace ProductsApp.Controllers
         }
 
         private readonly HttpClient _httpClient = new HttpClient();
-        public async Task<int> GetDotNetOccurences(bool ok)
+        [ResponseType(typeof(Product))]
+        public async Task<IHttpActionResult> GetDotNetOccurences(bool ok)
         {
             // EX invocation (dynamic port): http://localhost:4879/api/Products?ok=true
             int occurences = 0;
@@ -43,9 +45,15 @@ namespace ProductsApp.Controllers
                 occurences = Regex.Matches(html, ".NET").Count;
                 
             }
-            return occurences;            
+            //responsetype attribute test
+            Product test = new Product();
+            test.Id = occurences;
+            test.Name = "test";
+            return Ok(test);            
         }
 
+        //[Route("api/products/{id:int}")]
+        //[HttpDelete]
         public IHttpActionResult DeleteProduct(int id)
         {
             //here we would connect to dbase and perform delete.

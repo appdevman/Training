@@ -60,7 +60,8 @@
     function invokeAsyncScrape() {
         $.getJSON(uri + "?ok=true")
             .done(function (data) {
-                $('#foundationResults').text(data);
+                //var productInfo = JSON.parse(data);
+                $('#foundationResults').text(data.Id);
             })
             .fail(function (jqXHR, textStatus, err) {
                 $('#foundationResults').text("Error: " + err);                
