@@ -116,27 +116,7 @@ namespace ReverseCharOrderInString
                 Console.Write("{0}\t", evenNumber);
             }
         }
-
-        private static void LambdatestKH()
-        {
-            //add list, add range, query it, loop thru it
-            List<string> words = new List<string>();
-            words.AddRange(new string[] { "My", "Name", "Aint", "fred" });
-
-            string searchCriteria = Console.ReadLine();
-            List<string> found = words.FindAll((s) =>
-            {
-                bool gotOne = s.Contains(searchCriteria);
-                return gotOne;
-            });
-        
-            foreach (string word in found)
-            {
-                Console.WriteLine(word);
-            }
-        }
-
-        private static void AnotherTest()
+        private static void OneParam()
         {
             List<string> words = new List<string>();
             words.AddRange(new string[] { "Hey", "ManHey", "Whats", "Happening" });
@@ -153,6 +133,7 @@ namespace ReverseCharOrderInString
 
             }
         }
+
         #endregion
     }
 }
