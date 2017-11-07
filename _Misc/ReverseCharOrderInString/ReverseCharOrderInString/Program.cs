@@ -15,11 +15,23 @@ namespace ReverseCharOrderInString
             //LINQLoopingUsingImplicitType();
             //ReverseToArrayOfLetters("kciuq xof depmuj raf yawa");  //BEST WAY FOR THIS STRING TYPE
             //ReverseToArrayEntireString("yawa raf depmuj xof kciuq");//BEST WAY FOR THIS STRING TYPE
-            LinkedListFun();
+            //AnotherTest();
         }
+        #region LINQ
+        private static void LINQLoopingUsingImplicitType()
+        {
+            int[] numbas = { 1, 2, 3, 4, 5 };
+            var stickumIn = from i in numbas where i == 2 select i; // LINQ results to implicit var
+            foreach (var i in stickumIn) // implicit var interator against the var collectino
+            {
+                Console.Write("{0} ", i); // now we can see each value.  NOTE: need to do this, even if one cell!  This is ienumerable var.
+            }
+        }
+        #endregion
+        #region String-Order Manipulation
         private static void FullReverseUsingStack(string input)
         {
-            
+
             StringBuilder sb = new StringBuilder();
             Stack<char> worker = new Stack<char>();
 
@@ -43,7 +55,7 @@ namespace ReverseCharOrderInString
             for (int i = 0; i < (words.Length); i++)
             {
                 string wordInput = words[i];
-                foreach(char c in wordInput)
+                foreach (char c in wordInput)
                 {
                     worker.Push(c);
                 }
@@ -53,33 +65,24 @@ namespace ReverseCharOrderInString
                     sb.Append(worker.Pop());
                 }
 
-                if (i != (words.Length-1))
+                if (i != (words.Length - 1))
                 {
                     sb.Append(" ");
                 }
             }
             Console.WriteLine(sb.ToString());
-        }
-        private static void LINQLoopingUsingImplicitType()
-        {
-            int[] numbas = { 1, 2, 3, 4, 5 };
-            var stickumIn = from i in numbas where i == 2 select i; // LINQ results to implicit var
-            foreach (var i in stickumIn) // implicit var interator against the var collectino
-            {
-                Console.Write("{0} ", i); // now we can see each value.  NOTE: need to do this, even if one cell!  This is ienumerable var.
-            }
-        }
+        }        
         private static void ReverseToArrayOfLetters(String input)
         {
             char[] delimiter = { ' ' };
             string[] words = input.Split(delimiter);
             StringBuilder sb = new StringBuilder();
 
-            for(int i = 0; i < words.Count(); i++)
+            for (int i = 0; i < words.Count(); i++)
             {
                 // for this word, reverse the letters & append to StringBuilder
-                sb.Append(words[i].Reverse().ToArray()); 
-                if(i != (words.Count() -1))
+                sb.Append(words[i].Reverse().ToArray());
+                if (i != (words.Count() - 1))
                 {
                     sb.Append(" ");
                 }
@@ -92,9 +95,64 @@ namespace ReverseCharOrderInString
             sb.Append(input.Reverse().ToArray());
             Console.WriteLine(sb.ToString());
         }
-        private static void LinkedListFun()
+        #endregion
+        #region Lambdas
+        private static void LambdaExpressionSyntax()
         {
-
+            // Make a list of integers.
+            List<int> list = new List<int>();
+            list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });
+            // Now process each argument within a group of
+            // code statements.
+            List<int> evenNumbers = list.FindAll((i) =>
+            {
+                Console.WriteLine("value of i is currently: {0}", i);
+                bool isEven = ((i % 2) == 0);
+                return isEven;
+            });
+            Console.WriteLine("Here are your even numbers:");
+            foreach (int evenNumber in evenNumbers)
+            {
+                Console.Write("{0}\t", evenNumber);
+            }
         }
+
+        private static void LambdatestKH()
+        {
+            //add list, add range, query it, loop thru it
+            List<string> words = new List<string>();
+            words.AddRange(new string[] { "My", "Name", "Aint", "fred" });
+
+            string searchCriteria = Console.ReadLine();
+            List<string> found = words.FindAll((s) =>
+            {
+                bool gotOne = s.Contains(searchCriteria);
+                return gotOne;
+            });
+        
+            foreach (string word in found)
+            {
+                Console.WriteLine(word);
+            }
+        }
+
+        private static void AnotherTest()
+        {
+            List<string> words = new List<string>();
+            words.AddRange(new string[] { "Hey", "ManHey", "Whats", "Happening" });
+            string criteria = Console.ReadLine();
+            Console.WriteLine($"Search criteria entered: {criteria}");
+            List<string> found = words.FindAll((s) =>
+            {
+                bool ifFound = s.Contains(criteria);
+                return ifFound;
+            });
+            foreach(string word in found)
+            {
+                Console.WriteLine($"Found the following values based on provided criteria: {word}\t");
+
+            }
+        }
+        #endregion
     }
 }

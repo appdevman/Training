@@ -18,10 +18,7 @@ namespace ProductsApp.Controllers
               new Product {Id = 3, Name = "Hammer", Category = "Hardware", Price = 3 }
         };
 
-        public IEnumerable<Product> GetAllProducts()
-        {
-            return products;
-        }
+        public IEnumerable<Product> GetAllProducts() => products;
 
         public IHttpActionResult GetProduct(int id)
         {
@@ -41,10 +38,15 @@ namespace ProductsApp.Controllers
             int occurences = 0;
             if (ok)
             {
-                var html = await _httpClient.GetStringAsync("http://dotnetfoundation.org");
+                var html = await _httpClient.GetStringAsync("https://www.dotnetfoundation.org/");
                 occurences = Regex.Matches(html, ".NET").Count;
-                
             }
+
+            if(occurences == 0)
+            {
+                return NotFound();
+            }
+
             //responsetype attribute test
             Product test = new Product();
             test.Id = occurences;
