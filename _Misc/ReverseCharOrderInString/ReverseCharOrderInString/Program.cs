@@ -16,6 +16,7 @@ namespace ReverseCharOrderInString
             //ReverseToArrayOfLetters("kciuq xof depmuj raf yawa");  //BEST WAY FOR THIS STRING TYPE
             //ReverseToArrayEntireString("yawa raf depmuj xof kciuq");//BEST WAY FOR THIS STRING TYPE
             //AnotherTest();
+            test("ehT xoF");
         }
         #region LINQ
         private static void LINQLoopingUsingImplicitType()
@@ -93,6 +94,23 @@ namespace ReverseCharOrderInString
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(input.Reverse().ToArray());
+            Console.WriteLine(sb.ToString());
+        }
+
+       private static void test(string input)
+        {
+            char[] delim = { ' ' };
+            string[] words = input.Split(delim);
+            StringBuilder sb = new StringBuilder();
+
+            for(int i = 0; i < words.Count(); i++)
+            {
+                sb.Append(words[i].Reverse().ToArray());
+                if(i != (words.Count() -1))
+                {
+                    sb.Append(" ");
+                }
+            }
             Console.WriteLine(sb.ToString());
         }
         #endregion

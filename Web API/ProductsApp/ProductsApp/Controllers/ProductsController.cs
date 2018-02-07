@@ -29,6 +29,16 @@ namespace ProductsApp.Controllers
             }
             return Ok(product);
         }
+        
+        public IHttpActionResult GetProductByNameSearch(string searchCriteria)
+        {
+            var product = products.FirstOrDefault((p) => p.Name == searchCriteria);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
+        }
 
         private readonly HttpClient _httpClient = new HttpClient();
         [ResponseType(typeof(Product))]

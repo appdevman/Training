@@ -15,6 +15,12 @@
         <input type="button" value="Search" onclick="find();" />
         <p id="product" />
     </div>
+    <div>
+        <h2>Search by Name</h2>
+        <input type="text" id="prodName" size="15" />
+        <input type="button" value="SearchByName" onclick="findByName();" />
+        <p id="namedProduct" />
+    </div>
     <hr />
     <div>
         <h2>Delete</h2>
@@ -81,7 +87,18 @@
           .fail(function (jqXHR, textStatus, err) {
             $('#product').text('Error: ' + err);
           });
-    }
+        }
+
+        function findByName() {
+        var searchCriteria = $('#prodName').val();
+        $.getJSON(uri + '?searchCriteria=' + searchCriteria)
+            .done(function (data) {
+                $('#namedProduct').text(formatItem(data));
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                $('#namedProduct').text('Error: ' + err);
+            });
+        }
     </script>
 </body>
 </html>
