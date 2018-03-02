@@ -29,5 +29,10 @@ namespace AutoLotConsoleApp.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+
+        public override string ToString()
+        {
+            return $"This car: {CarId}, {Make}, {Color}, {CarNickName}.";
+        }
     }
 }

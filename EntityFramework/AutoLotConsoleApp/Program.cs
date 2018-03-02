@@ -13,8 +13,9 @@ namespace AutoLotConsoleApp
         static void Main(string[] args)
         {
             // AddNewRecord test, hard coded vals in method
-            int carId = AddNewRecord();
-            WriteLine(carId);
+            //int carId = AddNewRecord();
+           // WriteLine(carId);
+            PrintAllInventory();
             ReadLine();
         }
         private static int AddNewRecord()
@@ -38,6 +39,30 @@ namespace AutoLotConsoleApp
                 }
             }
         }
+
+        private static void PrintAllInventory()
+        {
+            // select all items from the Inventory table of AutoLot,
+            // and print out the data using our custom ToString()
+            // of the Car entity class
+            using (var context = new AutoLotEntities())
+            {
+                //foreach (Car c in context.Cars)
+                //{
+                //    WriteLine(c.ToString());
+                //}
+                //foreach (Car c in context.Cars.SqlQuery(
+                //        "Select CarId,Make,Color,PetName as CarNickName from Inventory where Make=@p0", "BMW"))
+                //{ WriteLine(c.ToString()); }
+                //foreach (Car c in context.Cars.Where(c => c.Make == "BMW"))
+                //{
+                //    WriteLine(c.ToString());
+                //}
+
+            }
+        }
+
+        
     }//class
     
 }//namespace
