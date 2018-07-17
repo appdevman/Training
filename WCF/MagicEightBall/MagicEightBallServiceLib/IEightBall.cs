@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MagicEightBallServiceLib
 {
-    [ServiceContract(Namespace = "http://www.appdevco.com")]
+    [ServiceContract(Namespace = "localhost")]
     public interface IEightBall
     {
         [OperationContract]

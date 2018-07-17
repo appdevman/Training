@@ -12,13 +12,13 @@ namespace MagicEightBallServiceClient.MagicEightBallServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.appdevco.com", ConfigurationName="MagicEightBallServiceReference.IEightBall")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="localhost", ConfigurationName="MagicEightBallServiceReference.IEightBall")]
     public interface IEightBall {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.appdevco.com/IEightBall/ObtainAnswerToQuestion", ReplyAction="http://www.appdevco.com/IEightBall/ObtainAnswerToQuestionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="localhost/IEightBall/ObtainAnswerToQuestion", ReplyAction="localhost/IEightBall/ObtainAnswerToQuestionResponse")]
         string ObtainAnswerToQuestion(string userQuestion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.appdevco.com/IEightBall/ObtainAnswerToQuestion", ReplyAction="http://www.appdevco.com/IEightBall/ObtainAnswerToQuestionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="localhost/IEightBall/ObtainAnswerToQuestion", ReplyAction="localhost/IEightBall/ObtainAnswerToQuestionResponse")]
         System.Threading.Tasks.Task<string> ObtainAnswerToQuestionAsync(string userQuestion);
     }
     

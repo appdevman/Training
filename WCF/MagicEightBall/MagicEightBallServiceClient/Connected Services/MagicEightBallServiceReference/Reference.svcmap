@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce69f748-4490-41c1-9e4b-75ed29aa59f1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8f445d1d-e95c-45e7-951d-b1e5b6960584" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:8086/MagicEightBallService" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MagicEightBallService.wsdl" MetadataType="Wsdl" ID="4d5dbf2e-816d-4193-9234-03ec025ab3e7" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?wsdl" />
-    <MetadataFile FileName="MagicEightBallService1.wsdl" MetadataType="Wsdl" ID="fb0d20d5-78db-4052-958a-3dd4932103f3" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?wsdl=wsdl0" />
-    <MetadataFile FileName="MagicEightBallService.xsd" MetadataType="Schema" ID="b5fa6203-526d-4ec3-90ca-2513a4e26bd5" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?xsd=xsd0" />
-    <MetadataFile FileName="MagicEightBallService1.xsd" MetadataType="Schema" ID="338a2ff0-fa5d-4cb3-8da7-6d9280161ae8" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?xsd=xsd1" />
-    <MetadataFile FileName="MagicEightBallService.disco" MetadataType="Disco" ID="04b26df1-c7b2-4209-ae49-65b6b9799612" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?disco" />
+    <MetadataFile FileName="MagicEightBallService.wsdl" MetadataType="Wsdl" ID="61a82ca8-e35b-4502-9e2d-96714a47ba76" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?wsdl" />
+    <MetadataFile FileName="MagicEightBallService1.wsdl" MetadataType="Wsdl" ID="0e9bc930-2dc6-448b-ae9a-4ed1a64351ee" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?wsdl=wsdl0" />
+    <MetadataFile FileName="MagicEightBallService.xsd" MetadataType="Schema" ID="99793f05-539b-4adc-8cc7-a9b47f8f8533" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?xsd=xsd0" />
+    <MetadataFile FileName="MagicEightBallService1.xsd" MetadataType="Schema" ID="4b767bd4-c6da-4013-8e19-bf63a76d6b29" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?xsd=xsd1" />
+    <MetadataFile FileName="MagicEightBallService.disco" MetadataType="Disco" ID="3b0b3618-e209-47f6-8d56-ca4897149435" SourceId="1" SourceUrl="http://localhost:8086/MagicEightBallService?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
