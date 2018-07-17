@@ -13,23 +13,37 @@ namespace ReverseCharOrderInString
             //FullReverseUsingStack("xof kciuq");
             //WordSequenceNotReversedUsingStack("kciuq xof depmuj raf yawa");
             //LINQLoopingUsingImplicitType();
-            //ReverseToArrayOfLetters("kciuq xof depmuj raf yawa");  //BEST WAY FOR THIS STRING TYPE
+            //ReverseToArrayOf_WordOrderCorrect("kciuq xof depmuj raf yawa");  //BEST WAY FOR THIS STRING TYPE
             //ReverseToArrayEntireString("yawa raf depmuj xof kciuq");//BEST WAY FOR THIS STRING TYPE
-            //AnotherTest();
-            test("ehT xoF");
+            test("eht kciuq xof");
         }
-        #region LINQ
-        private static void LINQLoopingUsingImplicitType()
-        {
-            int[] numbas = { 1, 2, 3, 4, 5 };
-            var stickumIn = from i in numbas where i == 2 select i; // LINQ results to implicit var
-            foreach (var i in stickumIn) // implicit var interator against the var collectino
-            {
-                Console.Write("{0} ", i); // now we can see each value.  NOTE: need to do this, even if one cell!  This is ienumerable var.
-            }
-        }
-        #endregion
+
         #region String-Order Manipulation
+        private static void ReverseToArrayOf_WordOrderCorrect(String input)
+        {
+            char[] delimiter = { ' ' };
+            string[] words = input.Split(delimiter);
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < words.Count(); i++)
+            {
+                // for this word, reverse the letters & append to StringBuilder
+                sb.Append(words[i].Reverse().ToArray());
+                if (i != (words.Count() - 1))
+                {
+                    sb.Append(" ");
+                }
+            }
+            Console.WriteLine(sb.ToString());
+        }
+
+        private static void ReverseToArrayEntireString(string input)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(input.Reverse().ToArray());
+            Console.WriteLine(sb.ToString());
+        }
+
         private static void FullReverseUsingStack(string input)
         {
 
@@ -46,6 +60,7 @@ namespace ReverseCharOrderInString
             }
             Console.WriteLine(sb.ToString());
         }
+
         private static void WordSequenceNotReversedUsingStack(string InputString)
         {
             char[] delimiter = { ' ' };
@@ -72,48 +87,31 @@ namespace ReverseCharOrderInString
                 }
             }
             Console.WriteLine(sb.ToString());
-        }        
-        private static void ReverseToArrayOfLetters(String input)
-        {
-            char[] delimiter = { ' ' };
-            string[] words = input.Split(delimiter);
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < words.Count(); i++)
-            {
-                // for this word, reverse the letters & append to StringBuilder
-                sb.Append(words[i].Reverse().ToArray());
-                if (i != (words.Count() - 1))
-                {
-                    sb.Append(" ");
-                }
-            }
-            Console.WriteLine(sb.ToString());
-        }
-        private static void ReverseToArrayEntireString(string input)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(input.Reverse().ToArray());
-            Console.WriteLine(sb.ToString());
         }
 
-       private static void test(string input)
+
+        private static void test(string input)
         {
             char[] delim = { ' ' };
             string[] words = input.Split(delim);
-            StringBuilder sb = new StringBuilder();
-
-            for(int i = 0; i < words.Count(); i++)
+            
+            for (int i = 0; i < words.Count(); i++ )
             {
-                sb.Append(words[i].Reverse().ToArray());
-                if(i != (words.Count() -1))
+                switch (words[i])
                 {
-                    sb.Append(" ");
+                    case "what":
+                        Console.WriteLine("watever");
+                        break;
+                    case "eht":
+                        Console.WriteLine(words[i].ToString());
+                        break;
+                    default:
+                        break;
                 }
             }
-            Console.WriteLine(sb.ToString());
         }
         #endregion
+
         #region Lambdas
         private static void LambdaExpressionSyntax()
         {
@@ -151,6 +149,22 @@ namespace ReverseCharOrderInString
 
             }
         }
+
+        #endregion
+
+        #region LINQ
+        private static void LINQLoopingUsingImplicitType()
+        {
+            int[] numbas = { 1, 2, 3, 4, 5 };
+            var stickumIn = from i in numbas where i == 2 select i; // LINQ results to implicit var
+            foreach (var i in stickumIn) // implicit var interator against the var collectino
+            {
+                Console.Write("{0} ", i); // now we can see each value.  NOTE: need to do this, even if one cell!  This is ienumerable var.
+            }
+        }
+        #endregion
+
+        #region temp
 
         #endregion
     }
