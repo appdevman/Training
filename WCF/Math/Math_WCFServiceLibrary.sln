@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathServiceLibrary", "MathServiceLibrary\MathServiceLibrary.csproj", "{D58B8697-E45B-4D78-9D5A-ABA8CE1328BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathWindowsServiceHost", "MathWindowsServiceHost\MathWindowsServiceHost.csproj", "{B12E7775-FBC5-4623-BE7F-C428453ACC8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathServiceClient", "MathServiceClient\MathServiceClient.csproj", "{375734B8-075C-496A-A407-221ED913231C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D58B8697-E45B-4D78-9D5A-ABA8CE1328BB} = {D58B8697-E45B-4D78-9D5A-ABA8CE1328BB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D58B8697-E45B-4D78-9D5A-ABA8CE1328BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58B8697-E45B-4D78-9D5A-ABA8CE1328BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58B8697-E45B-4D78-9D5A-ABA8CE1328BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58B8697-E45B-4D78-9D5A-ABA8CE1328BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12E7775-FBC5-4623-BE7F-C428453ACC8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12E7775-FBC5-4623-BE7F-C428453ACC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12E7775-FBC5-4623-BE7F-C428453ACC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12E7775-FBC5-4623-BE7F-C428453ACC8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375734B8-075C-496A-A407-221ED913231C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375734B8-075C-496A-A407-221ED913231C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375734B8-075C-496A-A407-221ED913231C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375734B8-075C-496A-A407-221ED913231C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FE43A0D-6FBB-487A-9628-6F1C68A6D8DA}
+	EndGlobalSection
+EndGlobal
