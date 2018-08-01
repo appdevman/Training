@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AutoLotDAL.Models
+{
+    public partial class CreditRisk
+    {
+        [Key]
+        public int CustId { get; set; }
+
+        [StringLength(50)]
+        public string Firstname { get; set; }
+
+        [StringLength(50)]
+        public string LastName { get; set; }
+
+
+    }
+}
