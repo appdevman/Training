@@ -12,7 +12,7 @@ namespace AutoLotDAL.Models
         public int CustId { get; set; }
 
         [StringLength(50)]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         [StringLength(50)]
         public string LastName { get; set; }
