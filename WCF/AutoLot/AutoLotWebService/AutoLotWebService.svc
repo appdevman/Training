@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="AutoLotWebService.AutoLotWebService" CodeBehind="AutoLotWebService.svc.cs" %>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5cc7a19-d765-4810-8541-f1ee449bf795" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52825/AutoLotService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AutoLotService.disco" MetadataType="Disco" ID="7d42ffa9-8323-45b4-aa15-48e6774e582c" SourceId="1" SourceUrl="http://localhost:52825/AutoLotService.svc?disco" />
+    <MetadataFile FileName="AutoLotService.xsd" MetadataType="Schema" ID="30df025f-7ff0-4181-bfc5-5b81a00eef5b" SourceId="1" SourceUrl="http://localhost:52825/AutoLotService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AutoLotService1.xsd" MetadataType="Schema" ID="b7d2414c-5772-47e1-954b-884518976790" SourceId="1" SourceUrl="http://localhost:52825/AutoLotService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AutoLotService2.xsd" MetadataType="Schema" ID="c4f70d9e-38ad-433a-8872-9f454c74747f" SourceId="1" SourceUrl="http://localhost:52825/AutoLotService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AutoLotService.wsdl" MetadataType="Wsdl" ID="aeef04b1-bbcd-4196-beec-36fae155d7d2" SourceId="1" SourceUrl="http://localhost:52825/AutoLotService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
